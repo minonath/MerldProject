@@ -1,0 +1,13 @@
+.idea/
+
+__pycache__/
+
+misc/
+past/
+venv/
+
+*.ttf
+*.otf
+*.h
+
+.DS_Store

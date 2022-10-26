@@ -1,0 +1,96 @@
+from .._wrapper import *
+
+GL_VERSION_1_5 = 1
+GL_BUFFER_SIZE = 0x8764
+GL_BUFFER_USAGE = 0x8765
+GL_QUERY_COUNTER_BITS = 0x8864
+GL_CURRENT_QUERY = 0x8865
+GL_QUERY_RESULT = 0x8866
+GL_QUERY_RESULT_AVAILABLE = 0x8867
+GL_ARRAY_BUFFER = 0x8892
+GL_ELEMENT_ARRAY_BUFFER = 0x8893
+GL_ARRAY_BUFFER_BINDING = 0x8894
+GL_ELEMENT_ARRAY_BUFFER_BINDING = 0x8895
+GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = 0x889F
+GL_READ_ONLY = 0x88B8
+GL_WRITE_ONLY = 0x88B9
+GL_READ_WRITE = 0x88BA
+GL_BUFFER_ACCESS = 0x88BB
+GL_BUFFER_MAPPED = 0x88BC
+GL_BUFFER_MAP_POINTER = 0x88BD
+GL_STREAM_DRAW = 0x88E0
+GL_STREAM_READ = 0x88E1
+GL_STREAM_COPY = 0x88E2
+GL_STATIC_DRAW = 0x88E4
+GL_STATIC_READ = 0x88E5
+GL_STATIC_COPY = 0x88E6
+GL_DYNAMIC_DRAW = 0x88E8
+GL_DYNAMIC_READ = 0x88E9
+GL_DYNAMIC_COPY = 0x88EA
+GL_SAMPLES_PASSED = 0x8914
+GL_SRC1_ALPHA = 0x8589
+PFNGLGENQUERIESPROC = C(None, Int, P(UInt))
+PFNGLDELETEQUERIESPROC = C(None, Int, P(UInt))
+PFNGLISQUERYPROC = C(UByte, UInt)
+PFNGLBEGINQUERYPROC = C(None, UInt, UInt)
+PFNGLENDQUERYPROC = C(None, UInt)
+PFNGLGETQUERYIVPROC = C(None, UInt, UInt, P(Int))
+PFNGLGETQUERYOBJECTIVPROC = C(None, UInt, UInt, P(Int))
+PFNGLGETQUERYOBJECTUIVPROC = C(None, UInt, UInt, P(UInt))
+PFNGLBINDBUFFERPROC = C(None, UInt, UInt)
+PFNGLDELETEBUFFERSPROC = C(None, Int, P(UInt))
+PFNGLGENBUFFERSPROC = C(None, Int, P(UInt))
+PFNGLISBUFFERPROC = C(UByte, UInt)
+PFNGLBUFFERDATAPROC = C(None, UInt, Size, VoidP, UInt)
+PFNGLBUFFERSUBDATAPROC = C(None, UInt, Size, Size, VoidP)
+PFNGLGETBUFFERSUBDATAPROC = C(None, UInt, Size, Size, VoidP)
+PFNGLMAPBUFFERPROC = C(VoidP, UInt, UInt)
+PFNGLUNMAPBUFFERPROC = C(UByte, UInt)
+PFNGLGETBUFFERPARAMETERIVPROC = C(None, UInt, UInt, P(Int))
+PFNGLGETBUFFERPOINTERVPROC = C(None, UInt, UInt, P(VoidP))
+glGenQueries = GL('glGenQueries', None, Int, P(UInt))
+glDeleteQueries = GL('glDeleteQueries', None, Int, P(UInt))
+glIsQuery = GL('glIsQuery', UByte, UInt)
+glBeginQuery = GL('glBeginQuery', None, UInt, UInt)
+glEndQuery = GL('glEndQuery', None, UInt)
+glGetQueryiv = GL('glGetQueryiv', None, UInt, UInt, P(Int))
+glGetQueryObjectiv = GL('glGetQueryObjectiv', None, UInt, UInt, P(Int))
+glGetQueryObjectuiv = GL('glGetQueryObjectuiv', None, UInt, UInt, P(UInt))
+glBindBuffer = GL('glBindBuffer', None, UInt, UInt)
+glDeleteBuffers = GL('glDeleteBuffers', None, Int, P(UInt))
+glGenBuffers = GL('glGenBuffers', None, Int, P(UInt))
+glIsBuffer = GL('glIsBuffer', UByte, UInt)
+glBufferData = GL('glBufferData', None, UInt, Size, VoidP, UInt)
+glBufferSubData = GL('glBufferSubData', None, UInt, Size, Size, VoidP)
+glGetBufferSubData = GL('glGetBufferSubData', None, UInt, Size, Size, VoidP)
+glMapBuffer = GL('glMapBuffer', VoidP, UInt, UInt)
+glUnmapBuffer = GL('glUnmapBuffer', UByte, UInt)
+glGetBufferParameteriv = GL(
+    'glGetBufferParameteriv', None, UInt, UInt, P(Int)
+)
+glGetBufferPointerv = GL('glGetBufferPointerv', None, UInt, UInt, P(VoidP))
+
+__all__ = [
+    'GL_VERSION_1_5', 'GL_BUFFER_SIZE', 'GL_BUFFER_USAGE',
+    'GL_QUERY_COUNTER_BITS', 'GL_CURRENT_QUERY', 'GL_QUERY_RESULT',
+    'GL_QUERY_RESULT_AVAILABLE', 'GL_ARRAY_BUFFER', 'GL_ELEMENT_ARRAY_BUFFER',
+    'GL_ARRAY_BUFFER_BINDING', 'GL_ELEMENT_ARRAY_BUFFER_BINDING',
+    'GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING', 'GL_READ_ONLY', 'GL_WRITE_ONLY',
+    'GL_READ_WRITE', 'GL_BUFFER_ACCESS', 'GL_BUFFER_MAPPED',
+    'GL_BUFFER_MAP_POINTER', 'GL_STREAM_DRAW', 'GL_STREAM_READ',
+    'GL_STREAM_COPY', 'GL_STATIC_DRAW', 'GL_STATIC_READ', 'GL_STATIC_COPY',
+    'GL_DYNAMIC_DRAW', 'GL_DYNAMIC_READ', 'GL_DYNAMIC_COPY',
+    'GL_SAMPLES_PASSED', 'GL_SRC1_ALPHA', 'PFNGLGENQUERIESPROC',
+    'PFNGLDELETEQUERIESPROC', 'PFNGLISQUERYPROC', 'PFNGLBEGINQUERYPROC',
+    'PFNGLENDQUERYPROC', 'PFNGLGETQUERYIVPROC', 'PFNGLGETQUERYOBJECTIVPROC',
+    'PFNGLGETQUERYOBJECTUIVPROC', 'PFNGLBINDBUFFERPROC',
+    'PFNGLDELETEBUFFERSPROC', 'PFNGLGENBUFFERSPROC', 'PFNGLISBUFFERPROC',
+    'PFNGLBUFFERDATAPROC', 'PFNGLBUFFERSUBDATAPROC',
+    'PFNGLGETBUFFERSUBDATAPROC', 'PFNGLMAPBUFFERPROC', 'PFNGLUNMAPBUFFERPROC',
+    'PFNGLGETBUFFERPARAMETERIVPROC', 'PFNGLGETBUFFERPOINTERVPROC',
+    'glGenQueries', 'glDeleteQueries', 'glIsQuery', 'glBeginQuery',
+    'glEndQuery', 'glGetQueryiv', 'glGetQueryObjectiv', 'glGetQueryObjectuiv',
+    'glBindBuffer', 'glDeleteBuffers', 'glGenBuffers', 'glIsBuffer',
+    'glBufferData', 'glBufferSubData', 'glGetBufferSubData', 'glMapBuffer',
+    'glUnmapBuffer', 'glGetBufferParameteriv', 'glGetBufferPointerv'
+]
